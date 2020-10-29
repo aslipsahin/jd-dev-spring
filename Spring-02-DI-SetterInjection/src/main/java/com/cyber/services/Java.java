@@ -1,6 +1,7 @@
 package com.cyber.services;
 
 import com.cyber.interfaces.Course;
+import com.cyber.interfaces.ExtraSessions;
 
 public class Java implements Course {
 
@@ -11,10 +12,10 @@ public class Java implements Course {
     In this module i am practicing Setter Injection.
      */
 
-    private OfficeHours officeHours;
+    private ExtraSessions extraSessions;
 
-    public OfficeHours getOfficeHours() {
-        return officeHours;
+    public ExtraSessions getExtraSessions() {
+        return extraSessions;
     }
 
 /*
@@ -27,13 +28,13 @@ public class Java implements Course {
      config.xml file to find the bean named officeHours in this situation and inject it to officeHour setter method.
 
  */
-    public void setOfficeHours(OfficeHours officeHours) { //set + officeHours
-        this.officeHours = officeHours;
+    public void setExtraSessions(ExtraSessions extraSessions) { //set + officeHours
+        this.extraSessions = extraSessions;
     }
 
     @Override
     public void getTeachingHours() {
-        System.out.println("Weekly Teaching Hours: " + (20 + officeHours.getHours()));
+        System.out.println("Weekly Teaching Hours: " + (20 + extraSessions.getHours()));
     }
 
     /*
