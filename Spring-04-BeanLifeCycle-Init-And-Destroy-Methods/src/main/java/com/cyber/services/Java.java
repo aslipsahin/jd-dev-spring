@@ -16,6 +16,9 @@ public class Java implements Course {
 
 //    destroy method is going to run after i kill the container in the runner class which is CyberApp in my project
 //            ((ClassPathXmlApplicationContext)container).close();
+//    i have to down cast container since its reference type is ApplicationContext interface and the class type is
+//    ClassPathXmlApplicationContext meaning it has access to ApplicationContext but close() method belongs to
+//    ClassPathXmlApplicationContext.
 
     public void myDestroyMethod(){
         System.out.println("Executing destroy method");
