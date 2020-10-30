@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="java" class="com.cyber.services.Java" scope="prototype"></bean>
-    <bean id="selenium" class="com.cyber.services.Selenium"></bean>
+    <bean id="java" class="com.com.cyber.services.Java" scope="prototype"></bean>
+    <bean id="selenium" class="com.com.cyber.services.Selenium"></bean>
 
 </beans>
