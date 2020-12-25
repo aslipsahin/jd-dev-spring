@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <!-- The following form is the completed version. It retrieves the data from ui and saves it. -->
+    <!-- The below commented one is contains just retrieving the data from ui. -->
+
+    <!--    action: Tells where (which view) to navigate when you submit the form.
+            method: Tells get/post mapping. get method will run getters, post method will run setters.
+                    Here we use post method since we are posting something. -->
+    <form action="/mentor/confirm" method="post" th:object="${mentor}">
+
+        <!-- $ used to send the data to ui, * used to retrieve the data from ui. -->
+        <!-- To retrieve the value from ui and assign it to java object use th:field -->
+        <label>First Name</label>
+        <input type="text" id="firstName" th:field="*{firstName}">
+        <br><br>
+
+        <label>Last Name</label>
+        <input type="text" id="lastName" th:field="*{lastName}">
+        <br><br>
+
+        <label>Email</label>
+        <input type="email" id="email" th:field="*{email}">
+        <br><br>
+
+        <label>Gender</label>
+        <input type="radio" value="Male" th:field="*{gender}">Male
+        <input type="radio" value="Female" th:field="*{gender}">Female
+        <br><br>
+
+        <label>Graduated</label>
+        <input type="checkbox" id="graduated" th:filed="*{graduated}">
+        <br><br>
+
+        <!-- To retrieve the value from ui and assign it to java object use th:field
+             Additionally use th:value for iterated items -->
+        <label>Batch Number:</label>
+        <select th:field="*{batch}">
+            <option th:each="theBatch : ${batchList}" th:value="${theBatch}" th:text="${theBatch}"></option>
+        </select>
+        <br><br>
+
+        <label>Company</label>
+        <textarea th:field="*{company}"></textarea>
+        <br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <!-- The below commented form contains just retrieving the data from ui. -->
+    <!-- The upper uncommented one is the completed version. It retrieves the data from ui and saves it. -->
+    <!--    <form th:object="${mentor}">-->
+
+    <!--        &lt;!&ndash; $ used to send the data to ui, * used to retrieve the data from ui. &ndash;&gt;-->
+    <!--        &lt;!&ndash; To retrieve the value from ui and assign it to java object use th:field &ndash;&gt;-->
+    <!--        <label>First Name</label>-->
+    <!--        <input type="text" id="firstName" th:field="*{firstName}">-->
+    <!--        <br><br>-->
+
+    <!--        <label>Last Name</label>-->
+    <!--        <input type="text" id="lastName" th:field="*{lastName}">-->
+    <!--        <br><br>-->
+
+    <!--        <label>Email</label>-->
+    <!--        <input type="email" id="email" th:field="*{email}">-->
+    <!--        <br><br>-->
+
+    <!--        <label>Gender</label>-->
+    <!--        <input type="radio" value="Male" th:field="*{gender}">Male-->
+    <!--        <input type="radio" value="Female" th:field="*{gender}">Female-->
+    <!--        <br><br>-->
+
+    <!--        <label>Graduated</label>-->
+    <!--        <input type="checkbox" id="graduated" th:filed="*{graduated}">-->
+    <!--        <br><br>-->
+
+    <!--        &lt;!&ndash; To retrieve the value from ui and assign it to java object use th:field-->
+    <!--             Additionally use th:value for iterated items &ndash;&gt;-->
+    <!--        <label>Batch Number:</label>-->
+    <!--        <select th:field="*{batch}">-->
+    <!--            <option th:each="theBatch : ${batchList}" th:value="${theBatch}" th:text="${theBatch}"></option>-->
+    <!--        </select>-->
+    <!--        <br><br>-->
+
+    <!--        <label>Company</label>-->
+    <!--        <textarea th:field="*{company}"></textarea>-->
+    <!--        <br><br>-->
+
+    <!--        <button type="submit">Register</button>-->
+    <!--    </form>-->
+</div>
+</body>
+</html>
