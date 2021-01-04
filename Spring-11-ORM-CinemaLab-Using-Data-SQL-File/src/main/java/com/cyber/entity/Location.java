@@ -22,16 +22,4 @@ public class Location extends BaseEntity {
     private String city;
     private String address;
 
-    public Location(String name, BigDecimal latitude, BigDecimal longitude, String postalCode, String country,
-                    String state, String city, String address) {
-        this.name = name;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.postalCode = postalCode;
-        this.country = country;
-        this.state = state;
-        this.city = city;
-        this.address = address;
-    }
-
 }

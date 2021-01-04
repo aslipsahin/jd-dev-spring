@@ -22,8 +22,4 @@ public class Cinema extends BaseEntity {
     @JoinColumn(name = "location_id")
     private Location location;
 
-    public Cinema(String name, String sponsoredName) {
-        this.name = name;
-        this.sponsoredName = sponsoredName;
-    }
 }

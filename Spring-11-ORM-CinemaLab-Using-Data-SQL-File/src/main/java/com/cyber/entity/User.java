@@ -22,10 +22,4 @@ public class User extends BaseEntity {
     @JoinColumn(name = "account_details_id")
     private Account account;
 
-    public User(String email, String password, String username) {
-        this.email = email;
-        this.password = password;
-        this.username = username;
-    }
-
 }
