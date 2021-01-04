@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 @Setter
@@ -18,7 +15,8 @@ public class Cinema extends BaseEntity {
     private String name;
     private String sponsoredName;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    //    when i pump data through data.sql, i did not need cascading, i need through DataGenerator
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "location_id")
     private Location location;
 

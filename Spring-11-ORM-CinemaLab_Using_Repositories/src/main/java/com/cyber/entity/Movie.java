@@ -44,12 +44,11 @@ public class Movie extends BaseEntity {
             joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "genre_id"))
     private List<Genre> genreList = new ArrayList<>();
 
-    public Movie(String name, LocalDate releaseDate, Integer duration, String summary, MovieType type,
-                 MovieState state, BigDecimal price) {
+    public Movie(String name, LocalDate releaseDate, Integer duration, MovieType type, MovieState state,
+                 BigDecimal price) {
         this.name = name;
         this.releaseDate = releaseDate;
         this.duration = duration;
-        this.summary = summary;
         this.type = type;
         this.state = state;
         this.price = price;
